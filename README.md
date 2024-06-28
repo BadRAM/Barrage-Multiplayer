@@ -9,9 +9,9 @@ Barrage is a script that automates save synchronization through a git repo. When
 ## Client Setup Instructions:
 1. Make sure you have git installed, and logged in to the appropriate repo host
 2. Clone this repository into a memorable place on your computer. Documents is appropriate. (Do not clone [the original Barrage-Multiplayer](https://github.com/BadRAM/Barrage-Multiplayer) repo, clone your game host's repo)
-3. Navigate to the cloned directory in terminal. (use [git bash](https://git-scm.com/downloads) on windows) Run `bash start.bash`, it should exit early and tell you to edit settings.config
+3. Navigate to the cloned directory in terminal. (use [git bash](https://git-scm.com/downloads) on windows) Run `bash barrage.bash`, it should exit early and tell you to edit settings.config
 4. In settings.cfg, enter your desired username and full path to *save* folder. Example: `GAMEDIR="C:\Users\Name\Games\Kerbal-Space-Program\saves"`
-5. Run `bash start.bash` again. If everything's worked it should say "Save locked and loaded! You may now load the game."
+5. Run `bash barrage.bash` again. If everything's worked it should say "Save locked and loaded! You may now load the game."
 
 ## Host Setup Instructions:
 1. Fork this repository, [the original Barrage-Multiplayer](https://github.com/BadRAM/Barrage-Multiplayer) repo
