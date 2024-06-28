@@ -3,6 +3,7 @@ settings.cfg
 
 
 # This is all Kerbal Space Program specific. Delete if your game uses .sfs or .loadmeta files
+# This optimizes storage use by not pushing backups or quicksaves to remote.
 *.sfs
 *.loadmeta
 
