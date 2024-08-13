@@ -1,21 +1,23 @@
-# Barrage-Multiplayer
+# Barrage Multiplayer - Science Edition
 
 ## What is this?
-This was made to provide stable, bug free multiplayer in Kerbal Space Program, though it works for other games too. Just about any game that stores it's save data as files on your computer should work.
+This is a bash script which automates sharing a KSP save between multiple computers and players. This version doesn't expect anything specific to KSP, and should work for most other single player games just as well.
 
 ## How does it work?
 Barrage is a script that automates save synchronization through a git repo. When you start the script, it downloads the latest state of the saved game and then locks the git repository in your name, so that nobody else can play. Once you're done, it uploads the changes you made and unlocks the repository.
 
 ## Client Setup Instructions:
-1. Make sure you have git installed, and logged in to the appropriate repo host
-2. Clone this repository into a memorable place on your computer. Documents is appropriate. (Do not clone [the original Barrage-Multiplayer](https://github.com/BadRAM/Barrage-Multiplayer) repo, clone your game host's repo)
-3. Navigate to the cloned directory in terminal. (use [git bash](https://git-scm.com/downloads) on windows) Run `bash barrage.bash`, it should exit early and tell you to edit settings.config
-4. In settings.cfg, enter your desired username and full path to *save* folder. Example: `GAMEDIR="C:\Users\Name\Games\Kerbal-Space-Program\saves"`
-5. Run `bash barrage.bash` again. If everything's worked it should say "Save locked and loaded! You may now load the game."
+1. Make sure you have git installed. If you are on windows, install git from [git-scm.com](https://git-scm.com/). The following instructions are intended to be followed in git for windows' git bash terminal, but should work in any bash environment with git installed.
+2. Get the owner of the repo you're hosting your barrage game in to add you as a contributor, and make sure you're signed in to git in the terminal you're using.
+3. At the top of this page, click "Code" and select "Download Zip" Extract Barrage-KSP-Science-main.zip to an appropriate new folder and navigate to it in git bash. run `sh barrage.sh`
+4. Follow the script's instructions. It will ask for the clone link of the repo you were added to in step 2, as well as the path to your KSP save folder.
+5. Once the setup is complete, you can run `sh barrage.sh` again to start a session. If everything's worked it should say "Save locked and loaded! you may now load the game." At this point you should be able to load and play the shared save from KSP. Remember to finish your session in barrage after you're done playing!
+
+## Simulator
+Simulator.sh will create a local copy of the save that you can use to design craft, plan missions, or check in on other's progress without locking the save or making any changes.
 
 ## Host Setup Instructions:
-1. Fork this repository, [the original Barrage-Multiplayer](https://github.com/BadRAM/Barrage-Multiplayer) repo
-2. Move the save file you want to sync into the repo directory. Make a new save file if necessary.
-3. Open start.bash and change `SAVENAME="NAME-OF-SAVE-FILE"` to reflect the name of the file you copied
-4. In README.md, change client setup instruction 2 to remove the disclaimer. update instruction 4's example to reflect the save file directory of the game you're targeting
-5. Follow client setup instructions 3-5
+1. Create a new git repository, copy and push game-settings.cfg and .gitignore from your barrage folder.
+2. Create a new save in KSP, then move it into the repo.
+3. In game-settings.cfg, update the SAVENAME= field to match the filename of your save.
+4. Commit and Push changes. You are now ready to run barrage first time setup. Follow the client setup instructions.
