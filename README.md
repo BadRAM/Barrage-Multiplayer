@@ -1,4 +1,4 @@
-# Barrage Multiplayer - Science Edition
+# Barrage Multiplayer
 
 ## What is this?
 This is a bash script which automates sharing a KSP save between multiple computers and players. This version doesn't expect anything specific to KSP, and should work for most other single player games just as well.
