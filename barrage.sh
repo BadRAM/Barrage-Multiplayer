@@ -30,10 +30,10 @@ if [ ! -f "./local-settings.cfg" ]; then
     read -rp "> " USERNAME
 
     echo ""
-	echo "generating local-settings.cfg..."
-	printf '%s\n' "GAMEDIR=\"${GAMEDIR}\"" "USERNAME=\"${USERNAME}\"" > local-settings.cfg
-	echo "setup complete. re-run this script to start playing."
-	exit 1
+    echo "generating local-settings.cfg..."
+    printf '%s\n' "GAMEDIR=\"${GAMEDIR}\"" "USERNAME=\"${USERNAME}\"" > local-settings.cfg
+    echo "setup complete. re-run this script to start playing."
+    exit 1
 fi
 
 source ./local-settings.cfg
@@ -44,7 +44,7 @@ git pull
 
 # Check for lockfile
 if [ -f "./locked.txt" ]; then
-	cat ./locked.txt
+    cat ./locked.txt
     exit 1
 fi
 
@@ -60,7 +60,7 @@ git commit -m "${USERNAME} Started session" && git push
 if [ $retVal -ne 0 ]; then
     echo ""
     echo "+===========================================+"
-	echo "| Error detected while pushing lock commit. |"
+    echo "| Error detected while pushing lock commit. |"
     echo "+===========================================+"
     exit $retVal
 fi
@@ -95,7 +95,7 @@ retVal=$?
 if [ $retVal -ne 0 ]; then
     echo ""
     echo "+=============================================+"
-	echo "| Error detected while pushing unlock commit! |"
+    echo "| Error detected while pushing unlock commit! |"
     echo "| If you can't fix it now, please inform the  |"
     echo "| repo owner, or it will be stuck locked.     |"
     echo "+=============================================+"
